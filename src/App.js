@@ -30,7 +30,7 @@ function App() {
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
-                <p>The new content</p>
+                <p>The newest content but even better now</p>
                 <a
                     className='App-link'
                     href='https://reactjs.org'
