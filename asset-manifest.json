@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ApsNotes/static/css/main.61458011.css",
-    "main.js": "/ApsNotes/static/js/main.0731fdfd.js",
+    "main.js": "/ApsNotes/static/js/main.dc14e51f.js",
     "static/js/787.1515e789.chunk.js": "/ApsNotes/static/js/787.1515e789.chunk.js",
     "service-worker.js": "/ApsNotes/service-worker.js",
     "static/media/logo.svg": "/ApsNotes/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "/ApsNotes/index.html",
     "main.61458011.css.map": "/ApsNotes/static/css/main.61458011.css.map",
-    "main.0731fdfd.js.map": "/ApsNotes/static/js/main.0731fdfd.js.map",
+    "main.dc14e51f.js.map": "/ApsNotes/static/js/main.dc14e51f.js.map",
     "787.1515e789.chunk.js.map": "/ApsNotes/static/js/787.1515e789.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61458011.css",
-    "static/js/main.0731fdfd.js"
+    "static/js/main.dc14e51f.js"
   ]
 }
