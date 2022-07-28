@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import CranePage from '../../routes/CranePage/CranePage';
 import SwanPage from '../../routes/SwanPage/SwanPage';
 import Header from '../Header/Header';
-import NotesList from '../NotesList/NotesList';
+import NotesList from '../../routes/NotesList/NotesList';
 import './AppContent.scss';
 
 const AppContent = () => {

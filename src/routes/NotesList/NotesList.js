@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import NoteListItem from '../../components/NoteListItem/NoteListItem';
 import { NOTES } from '../../res/notes';
-import FutureNote from '../FutureNote/FutureNote';
-import NoteListItem from '../NoteListItem/NoteListItem';
+import FutureNote from '../../components/FutureNote/FutureNote';
 
 const NotesList = () => {
     const [notes] = useState(NOTES);
