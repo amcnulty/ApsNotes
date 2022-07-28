@@ -20,7 +20,7 @@ const BrowserContent = () => {
     };
 
     return (
-        <div className='BrowserContent d-flex justify-content-center align-items-center'>
+        <div className='BrowserContent justify-content-center align-items-center'>
             <button className='btn btn-primary p-4' onClick={handleInstallClick}>Install App</button>
         </div>
     );
