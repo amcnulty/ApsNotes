@@ -1,0 +1,15 @@
+@import '../../scss/variables.scss';
+
+.NoteListItem {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vw;
+    .statusIcon {
+        width: 15vw;
+        height: 15vw;
+    }
+    a {
+        color: $textColor;
+    }
+}

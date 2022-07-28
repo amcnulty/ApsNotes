@@ -1,0 +1,11 @@
+@import '../../scss/variables.scss';
+
+.BrowserContent {
+    display: block;
+}
+
+@media all and (display-mode: $displayMode) {
+    .BrowserContent {
+      display: none;
+    }
+}

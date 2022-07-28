@@ -1,0 +1,11 @@
+@import '../../scss/variables.scss';
+
+.AppContent {
+    display: none;
+}
+
+@media all and (display-mode: $displayMode) {
+    .AppContent {
+      display: block;
+    }
+}
