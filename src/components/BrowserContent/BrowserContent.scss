@@ -2,6 +2,7 @@
 
 .BrowserContent {
     display: block;
+    height: 100vh;
 }
 
 @media all and (display-mode: $displayMode) {

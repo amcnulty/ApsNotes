@@ -13,15 +13,15 @@ const BrowserContent = () => {
             deferredPrompt.current.prompt();
             deferredPrompt.current.userChoice.then((outcome) => {
                 if (outcome === 'accepted') {
-                    deferredPrompt = null;
+                    deferredPrompt.current = null;
                 }
             });
         }
     };
 
     return (
-        <div className='BrowserContent'>
-            <button onClick={handleInstallClick}>Install App</button>
+        <div className='BrowserContent d-flex justify-content-center align-items-center'>
+            <button className='btn btn-primary p-4' onClick={handleInstallClick}>Install App</button>
         </div>
     );
 };

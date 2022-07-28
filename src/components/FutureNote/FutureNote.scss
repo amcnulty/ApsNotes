@@ -1,0 +1,15 @@
+.FutureNote {
+    height: 80vw;
+    background-color: #407F7F;
+    color: #0D4D4D;
+    div.block {
+        background-color: #0D4D4D;
+        height: 15px;
+    }
+    div.circle {
+        width: 15vw;
+        height: 15vw;
+        background-color: #0D4D4D;
+        border-radius: 50%;
+    }
+}

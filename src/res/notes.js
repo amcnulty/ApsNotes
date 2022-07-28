@@ -1,3 +1,6 @@
+export const VALID = 'VALID';
+export const INVALID = 'INVALID';
+
 export const NOTES = [
     {
         id: 1,

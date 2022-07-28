@@ -1,0 +1,11 @@
+.CodeEntry {
+    .dangerText {
+        color: #550000;
+    }
+    .codeSection {
+        .form-control {
+            flex-basis: calc(33% - 40px);
+            margin: 0px 20px;
+        }
+    }
+}
