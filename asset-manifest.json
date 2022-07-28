@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/ApsNotes/static/css/main.46e1e450.css",
-    "main.js": "/ApsNotes/static/js/main.27295c72.js",
+    "main.js": "/ApsNotes/static/js/main.864a2b7c.js",
     "static/js/787.1515e789.chunk.js": "/ApsNotes/static/js/787.1515e789.chunk.js",
     "static/media/swan.jpg": "/ApsNotes/static/media/swan.abb8dc0b786657cf7877.jpg",
     "static/media/crane.jpg": "/ApsNotes/static/media/crane.5bb7e653180ef3024ae6.jpg",
     "service-worker.js": "/ApsNotes/service-worker.js",
     "index.html": "/ApsNotes/index.html",
     "main.46e1e450.css.map": "/ApsNotes/static/css/main.46e1e450.css.map",
-    "main.27295c72.js.map": "/ApsNotes/static/js/main.27295c72.js.map",
+    "main.864a2b7c.js.map": "/ApsNotes/static/js/main.864a2b7c.js.map",
     "787.1515e789.chunk.js.map": "/ApsNotes/static/js/787.1515e789.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.46e1e450.css",
-    "static/js/main.27295c72.js"
+    "static/js/main.864a2b7c.js"
   ]
 }
