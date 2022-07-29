@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     enteredCodesMap: {},
-    cranePageCodes: [],
     noteStatusMap: {}
 };
 
@@ -10,9 +9,6 @@ const notesSlice = createSlice({
     name: 'notes',
     initialState,
     reducers: {
-        cranePageCodeChanged: (state, action) => {
-            state.cranePageCodes[action.payload.index] = action.payload.value;
-        },
         validationChanged: (state, action) => {
             state.noteStatusMap[action.payload.id] = action.payload.status;
         },
@@ -27,15 +23,9 @@ const notesSlice = createSlice({
     }
 });
 
-export const {
-    cranePageCodeChanged,
-    validationChanged,
-    enteredCodeChanged
-} = notesSlice.actions;
+export const { validationChanged, enteredCodeChanged } = notesSlice.actions;
 
 export const selectEnteredCodes = (state) => state.notes.enteredCodesMap;
 export const selectNoteStatusMap = (state) => state.notes.noteStatusMap;
-export const selectValidation = (state) =>
-    state.notes.noteStatusMap;
 
 export default notesSlice.reducer;

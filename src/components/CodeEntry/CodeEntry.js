@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    cranePageCodeChanged,
     validationChanged,
     enteredCodeChanged,
     selectEnteredCodes,
-    selectValidation
+    selectNoteStatusMap,
+    
 } from '../../features/notes/notesSlice';
 import { INVALID, VALID } from '../../res/notes';
 import Check from '../NoteListItem/Check';
@@ -12,11 +12,10 @@ import './CodeEntry.scss';
 
 const CodeEntry = ({ codes, note }) => {
     const enteredCodes = useSelector(selectEnteredCodes)[note.id] ?? [];
-    const validation = useSelector(selectValidation)[note.id];
+    const validation = useSelector(selectNoteStatusMap)[note.id];
     const dispatch = useDispatch();
 
     const handleCodeEntry = (value, index) => {
-        dispatch(cranePageCodeChanged({ index, value }));
         dispatch(enteredCodeChanged({ id: note.id, index, value }));
     };
 

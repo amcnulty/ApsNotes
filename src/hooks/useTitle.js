@@ -7,11 +7,17 @@ export const useTitle = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const note = NOTES.find(note => `/${note.path}` === location.pathname);
+        const note = NOTES.find(
+            (note) => `/${note.path}` === location.pathname
+        );
         if (note) {
             setTitle(note.name);
         } else {
-            setTitle('Notes');
+            if (location.pathname === '/codes') {
+                setTitle('Your Codes');
+            } else {
+                setTitle('Notes');
+            }
         }
     }, [location.pathname]);
 

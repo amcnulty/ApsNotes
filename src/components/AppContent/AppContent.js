@@ -5,6 +5,7 @@ import SwanPage from '../../routes/SwanPage/SwanPage';
 import Header from '../Header/Header';
 import NotesList from '../../routes/NotesList/NotesList';
 import './AppContent.scss';
+import CodesList from '../../routes/CodesList/CodesList';
 
 const AppContent = () => {
     return (
@@ -13,6 +14,7 @@ const AppContent = () => {
                 <Header />
                 <Routes>
                     <Route path='/' element={<NotesList />} />
+                    <Route path='/codes' element={<CodesList />} />
                     <Route path='/crane' element={<CranePage />} />
                     <Route path='/swan' element={<SwanPage />} />
                 </Routes>
