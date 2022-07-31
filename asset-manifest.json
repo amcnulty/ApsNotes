@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ApsNotes/static/css/main.76fb3ff2.css",
-    "main.js": "/ApsNotes/static/js/main.2b85cc6c.js",
+    "main.css": "/ApsNotes/static/css/main.1cef9f07.css",
+    "main.js": "/ApsNotes/static/js/main.21eda594.js",
     "static/js/787.1515e789.chunk.js": "/ApsNotes/static/js/787.1515e789.chunk.js",
     "static/media/swan.jpg": "/ApsNotes/static/media/swan.abb8dc0b786657cf7877.jpg",
     "static/media/crane.jpg": "/ApsNotes/static/media/crane.5bb7e653180ef3024ae6.jpg",
     "service-worker.js": "/ApsNotes/service-worker.js",
     "index.html": "/ApsNotes/index.html",
-    "main.76fb3ff2.css.map": "/ApsNotes/static/css/main.76fb3ff2.css.map",
-    "main.2b85cc6c.js.map": "/ApsNotes/static/js/main.2b85cc6c.js.map",
+    "main.1cef9f07.css.map": "/ApsNotes/static/css/main.1cef9f07.css.map",
+    "main.21eda594.js.map": "/ApsNotes/static/js/main.21eda594.js.map",
     "787.1515e789.chunk.js.map": "/ApsNotes/static/js/787.1515e789.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76fb3ff2.css",
-    "static/js/main.2b85cc6c.js"
+    "static/css/main.1cef9f07.css",
+    "static/js/main.21eda594.js"
   ]
 }
