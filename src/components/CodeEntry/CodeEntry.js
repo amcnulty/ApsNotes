@@ -24,15 +24,11 @@ const CodeEntry = ({ codes, note }) => {
         codes.forEach((code, index) => {
             if (!enteredCodes[index]) {
                 valid = false;
-            } else if (code !== enteredCodes[index].toUpperCase()) {
+            } else if (!enteredCodes.find((enteredCode) => enteredCode.toUpperCase() === code)) {
                 valid = false;
             }
         });
-        if (valid) {
-            dispatch(validationChanged({ id: note.id, status: VALID }));
-        } else {
-            dispatch(validationChanged({ id: note.id, status: INVALID }));
-        }
+        dispatch(validationChanged({ id: note.id, status: valid ? VALID : INVALID }));
     };
 
     return (

@@ -21,12 +21,16 @@ const CodesList = () => {
         return undefined;
     }), [enteredCodes, noteStatusMap]);
 
+    const totalCodes = useMemo(() => {
+        return [].concat(...codeSpans.filter((spans) => !!spans)).length;
+    }, [codeSpans]);
+
     console.log('codeSpans :>> ', codeSpans);
 
     return (
         <div className='CodesList text-center' style={{ padding: '0px 10px' }}>
             <p className='mt-3'>All valid codes you've entered are listed here.</p>
-            <h3 className='fw-bold text-success'>{[].concat(...codeSpans).length} / 26</h3>
+            <h3 className='fw-bold text-success'>{totalCodes} / 26</h3>
             <div className='row'>
                 {codeSpans}
             </div>
