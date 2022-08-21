@@ -2,6 +2,7 @@
 
 .AppContent {
     display: none;
+    user-select: none;
 }
 
 @media all and (display-mode: $displayMode) {

@@ -1,7 +1,7 @@
 @import './colors.scss';
 @import './sizing.scss';
 
-$displayMode: standalone;
+// $displayMode: standalone;
 
 // Use this for testing on browser only!!
-// $displayMode: browser;
+$displayMode: browser;
