@@ -11,6 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import notesReducer from '../features/notes/notesSlice';
+import mazeReducer from '../features/maze/mazeSlice';
 
 const persistConfig = {
     key: 'root',
@@ -20,7 +21,8 @@ const persistConfig = {
 
 export const store = configureStore({
     reducer: persistCombineReducers(persistConfig, {
-        notes: notesReducer
+        notes: notesReducer,
+        maze: mazeReducer
     }),
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
