@@ -7,70 +7,71 @@ import Maze25x25 from '../res/images/maze//maze25x25.gif';
 import { useEffect, useMemo, useRef } from 'react';
 
 const LEVEL_DATA = [
-    // {
-    //     slothX: 0,
-    //     slothY: 5,
-    //     bananaX: 5,
-    //     bananaY: 0
-    // },
     {
-        // test
-        slothX: 4,
-        slothY: 0,
+        slothX: 0,
+        slothY: 5,
         bananaX: 5,
         bananaY: 0
     },
     // {
-    //     slothX: 2,
+    //     // test
+    //     slothX: 4,
     //     slothY: 0,
-    //     bananaX: 2,
-    //     bananaY: 7
+    //     bananaX: 5,
+    //     bananaY: 0
     // },
     {
-        // test
         slothX: 2,
-        slothY: 6,
+        slothY: 0,
         bananaX: 2,
         bananaY: 7
     },
     // {
-    //     slothX: 14,
-    //     slothY: 14,
-    //     bananaX: 14,
-    //     bananaY: 2
+    //     // test
+    //     slothX: 2,
+    //     slothY: 6,
+    //     bananaX: 2,
+    //     bananaY: 7
     // },
     {
-        // test
-        slothX: 13,
-        slothY: 2,
+        slothX: 14,
+        slothY: 14,
         bananaX: 14,
         bananaY: 2
     },
     // {
-    //     slothX: 19,
-    //     slothY: 0,
-    //     bananaX: 10,
-    //     bananaY: 0
+    //     // test
+    //     slothX: 13,
+    //     slothY: 2,
+    //     bananaX: 14,
+    //     bananaY: 2
     // },
     {
-        // test
-        slothX: 10,
-        slothY: 1,
+        slothX: 19,
+        slothY: 0,
         bananaX: 10,
         bananaY: 0
     },
     // {
-    //     slothX: 13,
-    //     slothY: 24,
-    //     bananaX: 24,
-    //     bananaY: 4
+    //     // test
+    //     slothX: 10,
+    //     slothY: 1,
+    //     bananaX: 10,
+    //     bananaY: 0
     // },
     {
-        slothX: 24,
-        slothY: 5,
+        slothX: 13,
+        slothY: 24,
         bananaX: 24,
         bananaY: 4
     },
+    // {
+    //     // test
+    //     slothX: 24,
+    //     slothY: 5,
+    //     bananaX: 24,
+    //     bananaY: 4
+    // },
 ]
 
 const useMazeData = () => {

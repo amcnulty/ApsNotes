@@ -10,6 +10,7 @@ const mazeSlice = createSlice({
     initialState,
     reducers: {
         setLevel: (state, action) => {
+            // state.allLevelsCompleted = false; // Used for debugging issues
             state.currentLevel = action.payload;
         },
         levelCompleted: (state, action) => {

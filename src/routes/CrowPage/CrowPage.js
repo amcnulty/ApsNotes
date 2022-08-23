@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState
+} from 'react';
 import Sloth from './sloth.png';
 import Banana from './banana.png';
 import './CrowPage.scss';
@@ -14,6 +20,11 @@ import {
 import { Modal, ModalHeader } from 'reactstrap';
 import FirstPage from '../../components/CrowPageModals/FirstPage/FirstPage';
 import SecondPage from '../../components/CrowPageModals/SecondPage/SecondPage';
+import {
+    enteredCodeChanged,
+    validationChanged
+} from '../../features/notes/notesSlice';
+import { NOTES, VALID } from '../../res/notes';
 
 const LEFT = 'LEFT';
 const UP = 'UP';
@@ -27,6 +38,7 @@ const BANANA_SIZE = 20;
 const CROW_CODES = ['Z7', 'D26', 'X8', 'I25', 'L11'];
 
 const CrowPage = () => {
+    const note = useMemo(() => NOTES.find((note) => note.id === 4), []);
     const [dimensions, setDimensions] = useState([10, 10]);
     const canvas = useRef();
     const context = useRef();
@@ -200,15 +212,23 @@ const CrowPage = () => {
                 if (allLevelsCompleted) {
                     setNextLevel();
                 } else {
+                    dispatch(
+                        enteredCodeChanged({
+                            id: note.id,
+                            index: currentLevel,
+                            value: CROW_CODES[currentLevel]
+                        })
+                    );
+                    dispatch(validationChanged({ id: note.id, status: VALID }));
                     setShowModal((showModal) => !showModal);
                 }
             }
         },
-        [canMoveTo, renderSloth, dispatch, allLevelsCompleted, setNextLevel]
+        [canMoveTo, renderSloth, dispatch, allLevelsCompleted, setNextLevel, note.id, currentLevel]
     );
 
     useEffect(() => {
-        // dispatch(setLevel(0));
+        // dispatch(setLevel(0)); // Used for debugging issues
         const bananaImgLoader = new Promise((resolve) => {
             bananaImg.current = new Image();
             bananaImg.current.src = Banana;
