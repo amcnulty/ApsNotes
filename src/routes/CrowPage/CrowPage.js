@@ -5,7 +5,15 @@ import './CrowPage.scss';
 import Arrow from './Arrow';
 import useMazeData from '../../hooks/useMazeData';
 import { useDispatch, useSelector } from 'react-redux';
-import { currentLevelChanged, levelCompleted, selectCurrentLevel, setLevel } from '../../features/maze/mazeSlice';
+import {
+    levelCompleted,
+    selectAllLevelsCompleted,
+    selectCurrentLevel,
+    setLevel
+} from '../../features/maze/mazeSlice';
+import { Modal, ModalHeader } from 'reactstrap';
+import FirstPage from '../../components/CrowPageModals/FirstPage/FirstPage';
+import SecondPage from '../../components/CrowPageModals/SecondPage/SecondPage';
 
 const LEFT = 'LEFT';
 const UP = 'UP';
@@ -16,6 +24,7 @@ const PATH_WIDTH = 20;
 const WALL_WIDTH = 2;
 const SLOTH_SIZE = 15;
 const BANANA_SIZE = 20;
+const CROW_CODES = ['Z7', 'D26', 'X8', 'I25', 'L11'];
 
 const CrowPage = () => {
     const [dimensions, setDimensions] = useState([10, 10]);
@@ -32,6 +41,10 @@ const CrowPage = () => {
     const bananaImg = useRef();
     const getMazeData = useMazeData();
     const currentLevel = useSelector(selectCurrentLevel);
+    const allLevelsCompleted = useSelector(selectAllLevelsCompleted);
+    const [showModal, setShowModal] = useState(
+        !allLevelsCompleted && currentLevel === 0
+    );
     const dispatch = useDispatch();
 
     const canMoveTo = useCallback((destX, destY) => {
@@ -104,7 +117,7 @@ const CrowPage = () => {
             SLOTH_SIZE
         );
     }, []);
-    
+
     const initMaze = useCallback(
         ({ maze, slothX, slothY, bananaX, bananaY }) => {
             setDimensions([maze.width, maze.height]);
@@ -129,6 +142,25 @@ const CrowPage = () => {
         },
         [renderSloth]
     );
+
+    const setNextLevel = useCallback(() => {
+        if (!allLevelsCompleted && currentLevel === 0) {
+            return;
+        } else if (allLevelsCompleted) {
+            if (currentLevel === 4) {
+                getMazeData.then((mazeData) => {
+                    dispatch(setLevel(0));
+                    initMaze(mazeData[0]);
+                });
+            } else {
+                getMazeData.then((mazeData) => {
+                    initMaze(mazeData[currentLevel + 1]);
+                });
+            }
+        } else {
+            getMazeData.then((mazeData) => initMaze(mazeData[currentLevel]));
+        }
+    }, [allLevelsCompleted, currentLevel, dispatch, getMazeData, initMaze]);
 
     const move = useCallback(
         (direction) => {
@@ -163,20 +195,20 @@ const CrowPage = () => {
                 currSlothY.current = newY;
             } else if (movingAllowed === 2) {
                 // 2 means 'the sloth reached the end point'
+                stopMoving();
                 dispatch(levelCompleted());
-                if (currentLevel === 4) {
-                    getMazeData.then((mazeData) => initMaze(mazeData[0]));
-                    dispatch(setLevel(0));
+                if (allLevelsCompleted) {
+                    setNextLevel();
                 } else {
-                    getMazeData.then((mazeData) => initMaze(mazeData[currentLevel + 1]));
+                    setShowModal((showModal) => !showModal);
                 }
             }
         },
-        [canMoveTo, renderSloth, dispatch, getMazeData, initMaze, currentLevel]
+        [canMoveTo, renderSloth, dispatch, allLevelsCompleted, setNextLevel]
     );
 
     useEffect(() => {
-        dispatch(setLevel(0));
+        // dispatch(setLevel(0));
         const bananaImgLoader = new Promise((resolve) => {
             bananaImg.current = new Image();
             bananaImg.current.src = Banana;
@@ -189,10 +221,10 @@ const CrowPage = () => {
         });
         Promise.all([bananaImgLoader, slothImgLoader, getMazeData]).then(
             ([, , mazeData]) => {
-                initMaze(mazeData[0]);
+                initMaze(mazeData[currentLevel]);
             }
         );
-    }, [getMazeData, initMaze]);
+    }, [currentLevel, getMazeData, initMaze]);
 
     const makeWhite = (x, y, w, h) => {
         context.current.beginPath();
@@ -215,8 +247,17 @@ const CrowPage = () => {
         clearInterval(moveInterval.current);
     };
 
+    const handleModalClose = () => {
+        setShowModal(!showModal);
+        setNextLevel();
+    };
+
     return (
         <div className='CrowPage' style={{ padding: '0px 10px' }}>
+            <h4 className='text-center'>Level {currentLevel + 1}</h4>
+            <p className='text-center m-0 fw-bold'>
+                Help Mr. Stevens reach the banana!
+            </p>
             <canvas
                 width={dimensions[0]}
                 height={dimensions[1]}
@@ -270,6 +311,29 @@ const CrowPage = () => {
                     </button>
                 </div>
             </div>
+            <Modal
+                isOpen={showModal}
+                toggle={handleModalClose}
+                centered
+                backdrop='static'
+            >
+                <ModalHeader toggle={handleModalClose}>
+                    Michael Aaron's Maze Game!
+                </ModalHeader>
+                {currentLevel === 0 && (
+                    <FirstPage toggleModal={handleModalClose} />
+                )}
+                {currentLevel > 0 && (
+                    <SecondPage
+                        code={
+                            allLevelsCompleted
+                                ? CROW_CODES[currentLevel]
+                                : CROW_CODES[currentLevel - 1]
+                        }
+                        toggleModal={handleModalClose}
+                    />
+                )}
+            </Modal>
         </div>
     );
 };

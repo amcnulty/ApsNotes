@@ -25,8 +25,6 @@ const CodesList = () => {
         return [].concat(...codeSpans.filter((spans) => !!spans)).length;
     }, [codeSpans]);
 
-    console.log('codeSpans :>> ', codeSpans);
-
     return (
         <div className='CodesList text-center' style={{ padding: '0px 10px' }}>
             <p className='mt-3'>All valid codes you've entered are listed here.</p>
