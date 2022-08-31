@@ -24,6 +24,6 @@ export const NOTES = [
         id: 4,
         name: 'Crow',
         path: 'crow',
-        image: require('./images/heron.jpg')
+        image: require('./images/crow.jpg')
     }
 ];
