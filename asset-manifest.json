@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/ApsNotes/static/css/main.1cef9f07.css",
-    "main.js": "/ApsNotes/static/js/main.480550a7.js",
+    "main.css": "/ApsNotes/static/css/main.e25e8130.css",
+    "main.js": "/ApsNotes/static/js/main.49e9323a.js",
     "static/js/787.1515e789.chunk.js": "/ApsNotes/static/js/787.1515e789.chunk.js",
+    "static/media/crow.jpg": "/ApsNotes/static/media/crow.d3a41a48131acbe01fd5.jpg",
     "static/media/swan.jpg": "/ApsNotes/static/media/swan.abb8dc0b786657cf7877.jpg",
     "static/media/crane.jpg": "/ApsNotes/static/media/crane.5bb7e653180ef3024ae6.jpg",
     "service-worker.js": "/ApsNotes/service-worker.js",
     "static/media/heron.jpg": "/ApsNotes/static/media/heron.857e844be1270d828f04.jpg",
+    "static/media/banana.png": "/ApsNotes/static/media/banana.507a4757d44645c186a6.png",
+    "static/media/sloth.png": "/ApsNotes/static/media/sloth.619988d7213f3f57593b.png",
     "index.html": "/ApsNotes/index.html",
-    "main.1cef9f07.css.map": "/ApsNotes/static/css/main.1cef9f07.css.map",
-    "main.480550a7.js.map": "/ApsNotes/static/js/main.480550a7.js.map",
+    "main.e25e8130.css.map": "/ApsNotes/static/css/main.e25e8130.css.map",
+    "main.49e9323a.js.map": "/ApsNotes/static/js/main.49e9323a.js.map",
     "787.1515e789.chunk.js.map": "/ApsNotes/static/js/787.1515e789.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cef9f07.css",
-    "static/js/main.480550a7.js"
+    "static/css/main.e25e8130.css",
+    "static/js/main.49e9323a.js"
   ]
 }
