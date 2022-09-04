@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ApsNotes/static/css/main.e25e8130.css",
+    "main.css": "/ApsNotes/static/css/main.b411ca1c.css",
     "main.js": "/ApsNotes/static/js/main.49e9323a.js",
     "static/js/787.1515e789.chunk.js": "/ApsNotes/static/js/787.1515e789.chunk.js",
     "static/media/crow.jpg": "/ApsNotes/static/media/crow.d3a41a48131acbe01fd5.jpg",
@@ -11,12 +11,12 @@
     "static/media/banana.png": "/ApsNotes/static/media/banana.507a4757d44645c186a6.png",
     "static/media/sloth.png": "/ApsNotes/static/media/sloth.619988d7213f3f57593b.png",
     "index.html": "/ApsNotes/index.html",
-    "main.e25e8130.css.map": "/ApsNotes/static/css/main.e25e8130.css.map",
+    "main.b411ca1c.css.map": "/ApsNotes/static/css/main.b411ca1c.css.map",
     "main.49e9323a.js.map": "/ApsNotes/static/js/main.49e9323a.js.map",
     "787.1515e789.chunk.js.map": "/ApsNotes/static/js/787.1515e789.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e25e8130.css",
+    "static/css/main.b411ca1c.css",
     "static/js/main.49e9323a.js"
   ]
 }
